@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Header() {
     return (
         <header className="flex justify-between">
-        <a href="" className="flex items-center gap-1">
+        <Link to={'/'} className="flex items-center gap-1">
           <svg width="30" height="32">
             <path d="M29.3864 22.7101C29.2429 22.3073 29.0752 21.9176
              28.9157 21.5565C28.6701 21.0011 28.4129 20.4446 28.1641 
@@ -54,7 +54,7 @@ export default function Header() {
             </path>
           </svg>
           <span className="font-bold text-xl text-primary">airbnb</span>
-        </a>
+        </Link>
         <div className="flex items-center gap-2 border border-gray-300 rounded-full py-2 px-4 shadow-md shadow-gray-300">
           <div>Anywhere</div>
           <div className="w-px h-6 bg-gray-300"></div>
