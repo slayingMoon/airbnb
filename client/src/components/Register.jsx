@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default function Register() {
-    const baseUrl = 'http://localhost:4000';
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -11,7 +10,7 @@ export default function Register() {
     async function onUserRegister(e) {
         e.preventDefault();
         try {
-            await axios.post(`${baseUrl}/register`, {
+            await axios.post('/register', {
                 name,
                 email,
                 password,
