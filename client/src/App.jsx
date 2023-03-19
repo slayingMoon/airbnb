@@ -5,6 +5,8 @@ import Login from './components/Login';
 import Layout from './components/Layout';
 import Register from './components/Register';
 import axios from 'axios';
+import { UserContextProvider } from './auth/UserContext';
+import Account from './components/Account';
 
 axios.defaults.baseURL = 'http://localhost:4000';
 axios.defaults.withCredentials = true;
@@ -12,13 +14,16 @@ axios.defaults.withCredentials = true;
 function App() {
 
   return (
-    <Routes>
-      <Route path="/" element={<Layout />} >
-        <Route index element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-      </Route>
-    </Routes>
+    <UserContextProvider>
+      <Routes>
+        <Route path="/" element={<Layout />} >
+          <Route index element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/account" element={<Account />} />
+        </Route>
+      </Routes>
+    </UserContextProvider>
   )
 }
 
